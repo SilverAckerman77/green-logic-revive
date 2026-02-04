@@ -8,47 +8,42 @@ const Footer = () => {
   const quickLinks = [
     { href: '#about', label: 'About Us' },
     { href: '#services', label: 'Services' },
-    { href: '#certifications', label: 'Certifications' },
     { href: '#process', label: 'Our Process' },
+    { href: '#faq', label: 'FAQ' },
     { href: '#contact', label: 'Contact' },
   ];
 
   const services = [
-    'Computer Recycling',
-    'Laptop Disposal',
-    'Mobile Device Recycling',
-    'Battery Disposal',
-    'IT Asset Management',
+    'IT Refurbishment',
+    'Doorstep Collection',
     'Data Destruction',
+    'Battery Disposal',
+    'Compliance Reports',
   ];
 
   return (
-    <footer className="bg-foreground text-primary-foreground/80">
+    <footer className="bg-secondary border-t border-border">
       <div className="eco-container py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Company Info */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
-                <Recycle className="w-6 h-6 text-primary-foreground" />
+              <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
+                <Recycle className="w-5 h-5 text-primary-foreground" />
               </div>
-              <div>
-                <span className="font-display font-bold text-primary-foreground text-sm leading-tight block">
-                  Tech Logic E-Waste Recyclers
-                </span>
-                <span className="text-xs text-primary-foreground/60">(Unit-II)</span>
-              </div>
+              <span className="font-sans font-bold text-foreground">
+                TECHLOGIC
+              </span>
             </div>
-            <p className="text-sm mb-6 leading-relaxed">
+            <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
               Government-authorized e-waste recycling facility committed to
-              environmentally responsible disposal and recycling of electronic
-              equipment.
+              environmentally responsible disposal and recycling.
             </p>
-            <div className="flex gap-4">
-              <span className="px-3 py-1 rounded-full bg-primary-foreground/10 text-xs font-medium">
+            <div className="flex gap-3">
+              <span className="px-3 py-1 rounded-full bg-muted text-xs font-medium text-muted-foreground">
                 CPCB Authorized
               </span>
-              <span className="px-3 py-1 rounded-full bg-primary-foreground/10 text-xs font-medium">
+              <span className="px-3 py-1 rounded-full bg-muted text-xs font-medium text-muted-foreground">
                 KSPCB Certified
               </span>
             </div>
@@ -56,7 +51,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-display font-semibold text-primary-foreground mb-6">
+            <h4 className="font-sans font-semibold text-foreground mb-6">
               Quick Links
             </h4>
             <ul className="space-y-3">
@@ -64,7 +59,7 @@ const Footer = () => {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-sm hover:text-primary-foreground transition-colors"
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                   >
                     {link.label}
                   </a>
@@ -75,13 +70,13 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h4 className="font-display font-semibold text-primary-foreground mb-6">
+            <h4 className="font-sans font-semibold text-foreground mb-6">
               Our Services
             </h4>
             <ul className="space-y-3">
               {services.map((service) => (
                 <li key={service}>
-                  <span className="text-sm">{service}</span>
+                  <span className="text-sm text-muted-foreground">{service}</span>
                 </li>
               ))}
             </ul>
@@ -89,31 +84,32 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h4 className="font-display font-semibold text-primary-foreground mb-6">
+            <h4 className="font-sans font-semibold text-foreground mb-6">
               Contact Info
             </h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-eco-mint flex-shrink-0 mt-0.5" />
-                <span className="text-sm">
-                  Industrial Area, Phase 2<br />
+                <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                <span className="text-sm text-muted-foreground">
+                  Industrial Area, Phase 2
+                  <br />
                   Bengaluru, Karnataka - 560058
                 </span>
               </li>
               <li className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-eco-mint flex-shrink-0" />
+                <Phone className="w-5 h-5 text-primary flex-shrink-0" />
                 <a
                   href="tel:+919876543210"
-                  className="text-sm hover:text-primary-foreground transition-colors"
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                 >
                   +91 98765 43210
                 </a>
               </li>
               <li className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-eco-mint flex-shrink-0" />
+                <Mail className="w-5 h-5 text-primary flex-shrink-0" />
                 <a
                   href="mailto:info@techlogicewaste.com"
-                  className="text-sm hover:text-primary-foreground transition-colors"
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                 >
                   info@techlogicewaste.com
                 </a>
@@ -124,20 +120,20 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-primary-foreground/10">
+      <div className="border-t border-border">
         <div className="eco-container py-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-center md:text-left">
+          <p className="text-sm text-muted-foreground text-center md:text-left">
             © {new Date().getFullYear()} Tech Logic E-Waste Recyclers (Unit-II).
             All rights reserved.
           </p>
 
           <button
             onClick={scrollToTop}
-            className="flex items-center gap-2 text-sm hover:text-primary-foreground transition-colors group"
+            className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors group"
           >
             Back to top
-            <span className="w-8 h-8 rounded-full bg-primary-foreground/10 flex items-center justify-center group-hover:bg-primary-foreground/20 transition-colors">
-              <ArrowUp className="w-4 h-4" />
+            <span className="w-8 h-8 rounded-full bg-muted flex items-center justify-center group-hover:bg-primary transition-colors">
+              <ArrowUp className="w-4 h-4 group-hover:text-primary-foreground" />
             </span>
           </button>
         </div>

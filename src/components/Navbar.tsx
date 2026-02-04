@@ -15,11 +15,10 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { href: '#about', label: 'About' },
-    { href: '#services', label: 'Services' },
-    { href: '#certifications', label: 'Certifications' },
-    { href: '#process', label: 'Process' },
-    { href: '#contact', label: 'Contact' },
+    { href: '#services', label: 'Products' },
+    { href: '#about', label: 'About us' },
+    { href: '#faq', label: 'FAQ' },
+    { href: '#process', label: 'Our Process' },
   ];
 
   const scrollToSection = (href: string) => {
@@ -34,7 +33,7 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-background/95 backdrop-blur-md shadow-eco-md'
+          ? 'bg-background/95 backdrop-blur-md shadow-eco-md border-b border-border'
           : 'bg-transparent'
       }`}
     >
@@ -49,15 +48,12 @@ const Navbar = () => {
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
           >
-            <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center shadow-eco-sm group-hover:shadow-eco-md transition-shadow">
-              <Recycle className="w-6 h-6 text-primary-foreground" />
+            <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
+              <Recycle className="w-5 h-5 text-primary-foreground" />
             </div>
-            <div className="flex flex-col">
-              <span className="font-display font-bold text-foreground text-sm md:text-base leading-tight">
-                Tech Logic E-Waste Recyclers
-              </span>
-              <span className="text-xs text-muted-foreground">(Unit-II)</span>
-            </div>
+            <span className="font-sans font-bold text-foreground text-lg tracking-tight">
+              TECHLOGIC
+            </span>
           </a>
 
           {/* Desktop Navigation */}
@@ -66,17 +62,22 @@ const Navbar = () => {
               <button
                 key={link.href}
                 onClick={() => scrollToSection(link.href)}
-                className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors eco-link"
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
               >
                 {link.label}
               </button>
             ))}
+          </div>
+
+          {/* CTA Button */}
+          <div className="hidden lg:block">
             <Button
               variant="default"
               size="sm"
               onClick={() => scrollToSection('#contact')}
+              className="rounded-full px-6"
             >
-              Get a Quote
+              Contact us
             </Button>
           </div>
 
@@ -105,17 +106,17 @@ const Navbar = () => {
               <button
                 key={link.href}
                 onClick={() => scrollToSection(link.href)}
-                className="text-left py-3 px-4 text-sm font-medium text-foreground/80 hover:text-primary hover:bg-secondary rounded-lg transition-all"
+                className="text-left py-3 px-4 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-secondary rounded-lg transition-all"
               >
                 {link.label}
               </button>
             ))}
             <Button
               variant="default"
-              className="mt-2"
+              className="mt-2 rounded-full"
               onClick={() => scrollToSection('#contact')}
             >
-              Get a Quote
+              Contact us
             </Button>
           </div>
         </div>

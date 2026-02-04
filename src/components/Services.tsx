@@ -1,73 +1,37 @@
-import {
-  Monitor,
-  Laptop,
-  Smartphone,
-  Printer,
-  HardDrive,
-  Battery,
-  Cpu,
-  Server,
-  ArrowRight,
-} from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { ArrowRight, ArrowLeft, Recycle } from 'lucide-react';
+import { useState } from 'react';
 
 const Services = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
   const services = [
     {
-      icon: Monitor,
-      title: 'Computer & Monitors',
+      number: '01',
+      title: 'IT Product Refurbishment',
       description:
-        'Safe disposal and recycling of desktop computers, monitors, and display units with complete data destruction.',
-      items: ['Desktop PCs', 'LCD/LED Monitors', 'CRT Monitors', 'All-in-One PCs'],
+        'We extend the lifecycle of IT equipment through certified refurbishment processes, reducing e-waste while providing cost-effective solutions for businesses.',
+      icon: Recycle,
     },
     {
-      icon: Laptop,
-      title: 'Laptops & Tablets',
+      number: '02',
+      title: 'Doorstep Collection',
       description:
-        'Secure recycling of portable computing devices including laptops, notebooks, and tablet computers.',
-      items: ['Laptops', 'Notebooks', 'Tablets', 'E-readers'],
+        'Convenient pickup services from your location with complete documentation, secure transport, and chain of custody tracking.',
+      icon: null,
     },
     {
-      icon: Smartphone,
-      title: 'Mobile Devices',
+      number: '03',
+      title: 'Data Destruction',
       description:
-        'Responsible recycling of smartphones, feature phones, and other mobile communication devices.',
-      items: ['Smartphones', 'Feature Phones', 'Pagers', 'Mobile Accessories'],
+        'Certified data wiping and physical destruction services ensuring complete data security and compliance with regulatory requirements.',
+      icon: null,
     },
     {
-      icon: Printer,
-      title: 'Printers & Peripherals',
+      number: '04',
+      title: 'Compliance Reporting',
       description:
-        'Eco-friendly disposal of printers, scanners, and office peripherals with toner cartridge recycling.',
-      items: ['Inkjet Printers', 'Laser Printers', 'Scanners', 'Fax Machines'],
-    },
-    {
-      icon: HardDrive,
-      title: 'Storage Devices',
-      description:
-        'Secure destruction and recycling of data storage devices with certified data wiping procedures.',
-      items: ['Hard Drives', 'SSDs', 'USB Drives', 'Memory Cards'],
-    },
-    {
-      icon: Battery,
-      title: 'Batteries & UPS',
-      description:
-        'Safe handling and recycling of batteries and uninterruptible power supply systems.',
-      items: ['Lead-acid Batteries', 'Lithium Batteries', 'UPS Systems', 'Power Banks'],
-    },
-    {
-      icon: Cpu,
-      title: 'IT Components',
-      description:
-        'Recovery and recycling of IT components including circuit boards and electronic parts.',
-      items: ['Motherboards', 'RAM Modules', 'Graphics Cards', 'Cables'],
-    },
-    {
-      icon: Server,
-      title: 'Servers & Networking',
-      description:
-        'Enterprise-grade recycling services for servers, network equipment, and data center hardware.',
-      items: ['Rack Servers', 'Routers', 'Switches', 'Network Cables'],
+        'Comprehensive documentation and certificates of recycling for regulatory compliance and environmental audits.',
+      icon: null,
     },
   ];
 
@@ -78,63 +42,109 @@ const Services = () => {
     }
   };
 
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev + 1) % services.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev - 1 + services.length) % services.length);
+  };
+
   return (
-    <section id="services" className="eco-section">
+    <section id="services" className="eco-section-dark">
       <div className="eco-container">
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="eco-badge mb-4">Our Services</span>
-          <h2 className="font-display font-bold text-3xl md:text-4xl lg:text-5xl text-foreground mb-6">
-            Comprehensive <span className="text-primary">E-Waste Solutions</span>
-          </h2>
-          <p className="text-lg text-muted-foreground">
-            We handle all types of electronic waste with certified processes,
-            ensuring environmentally responsible recycling and maximum material
-            recovery.
-          </p>
-        </div>
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
+          {/* Left Content */}
+          <div>
+            <span className="eco-badge mb-6">(Services)</span>
 
-        {/* Services Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {services.map((service, index) => (
-            <div
-              key={service.title}
-              className="eco-card-hover p-6 group cursor-pointer"
-              style={{ animationDelay: `${index * 0.05}s` }}
+            <h2 className="eco-title-italic text-4xl md:text-5xl lg:text-6xl text-foreground mb-6">
+              <span className="italic">BUILT FOR</span>
+              <br />
+              <span className="italic">IMPACT</span>
+            </h2>
+
+            <p className="text-muted-foreground max-w-md mb-8">
+              From onboarding to reporting, Tech Logic delivers reliable,
+              CPCB-compliant e-waste solutions that support sustainability and scale.
+            </p>
+
+            <button
+              onClick={scrollToContact}
+              className="inline-flex items-center gap-3 text-foreground group"
             >
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary transition-colors duration-300">
-                <service.icon className="w-6 h-6 text-primary group-hover:text-primary-foreground transition-colors" />
-              </div>
+              <span className="w-10 h-10 rounded-full border border-primary flex items-center justify-center group-hover:bg-primary transition-colors">
+                <ArrowRight className="w-4 h-4 text-primary group-hover:text-primary-foreground transition-colors" />
+              </span>
+              <span className="text-sm font-medium">Contact us</span>
+            </button>
+          </div>
 
-              <h3 className="font-display font-semibold text-lg text-foreground mb-2">
-                {service.title}
-              </h3>
-
-              <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
-                {service.description}
-              </p>
-
-              <ul className="space-y-1">
-                {service.items.map((item) => (
-                  <li
-                    key={item}
-                    className="text-xs text-muted-foreground flex items-center gap-2"
-                  >
-                    <span className="w-1 h-1 rounded-full bg-primary/50" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
+          {/* Right Content - Cards */}
+          <div className="space-y-6">
+            {/* Navigation */}
+            <div className="flex items-center gap-2 justify-end">
+              <button
+                onClick={prevSlide}
+                className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:border-primary transition-colors"
+              >
+                <ArrowLeft className="w-4 h-4 text-muted-foreground" />
+              </button>
+              <button
+                onClick={nextSlide}
+                className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:border-primary transition-colors"
+              >
+                <ArrowRight className="w-4 h-4 text-muted-foreground" />
+              </button>
             </div>
-          ))}
-        </div>
 
-        {/* CTA */}
-        <div className="text-center mt-12">
-          <Button variant="default" size="lg" onClick={scrollToContact}>
-            Request a Service Quote
-            <ArrowRight className="w-4 h-4" />
-          </Button>
+            {/* Service Cards */}
+            <div className="grid md:grid-cols-2 gap-4">
+              {services.slice(0, 2).map((service, index) => (
+                <div
+                  key={service.number}
+                  className={`rounded-2xl p-6 ${
+                    index === 0 ? 'bg-white text-gray-900' : 'eco-card'
+                  }`}
+                >
+                  <div className="flex items-start justify-between mb-4">
+                    <h3
+                      className={`font-sans font-semibold text-lg ${
+                        index === 0 ? 'text-gray-900' : 'text-foreground'
+                      }`}
+                    >
+                      {service.title}
+                    </h3>
+                    <span
+                      className={`text-xs ${
+                        index === 0 ? 'text-gray-500' : 'text-muted-foreground'
+                      }`}
+                    >
+                      ({service.number})
+                    </span>
+                  </div>
+
+                  {service.icon && (
+                    <div className="w-20 h-20 mb-4">
+                      <service.icon
+                        className={`w-full h-full ${
+                          index === 0 ? 'text-primary' : 'text-primary'
+                        }`}
+                      />
+                    </div>
+                  )}
+
+                  <p
+                    className={`text-sm ${
+                      index === 0 ? 'text-gray-600' : 'text-muted-foreground'
+                    }`}
+                  >
+                    {service.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
