@@ -29,14 +29,15 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="eco-section bg-eco-sage/30">
+    <section id="about" className="eco-section-dark">
       <div className="eco-container">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="eco-badge mb-4">About Us</span>
-          <h2 className="font-display font-bold text-3xl md:text-4xl lg:text-5xl text-foreground mb-6">
-            Committed to a{' '}
-            <span className="text-primary">Sustainable Future</span>
+          <span className="eco-badge mb-6">About Us</span>
+          <h2 className="eco-title-italic text-4xl md:text-5xl lg:text-6xl text-foreground mb-6">
+            <span className="italic">Committed to a</span>
+            <br />
+            <span className="italic text-primary">Sustainable Future</span>
           </h2>
           <p className="text-lg text-muted-foreground">
             Tech Logic E-Waste Recyclers (Unit-II) is a government-authorized
@@ -58,7 +59,7 @@ const About = () => {
                   <value.icon className="w-7 h-7 text-primary group-hover:text-primary-foreground transition-colors" />
                 </div>
                 <div>
-                  <h3 className="font-display font-semibold text-xl text-foreground mb-3">
+                  <h3 className="font-sans font-semibold text-xl text-foreground mb-3">
                     {value.title}
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
@@ -80,9 +81,9 @@ const About = () => {
           ].map((stat) => (
             <div
               key={stat.label}
-              className="text-center p-6 rounded-xl bg-background border border-border"
+              className="text-center p-6 rounded-2xl bg-secondary border border-border"
             >
-              <div className="font-display font-bold text-3xl md:text-4xl text-primary mb-2">
+              <div className="font-sans font-bold text-3xl md:text-4xl text-primary mb-2">
                 {stat.value}
               </div>
               <div className="text-sm text-muted-foreground">{stat.label}</div>
