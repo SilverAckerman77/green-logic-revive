@@ -22,8 +22,8 @@ const Hero = () => {
 
           <p
             className="text-lg text-muted-foreground max-w-lg mb-8 animate-fade-up"
-            style={{ animationDelay: '0.1s' }}
-          >
+            style={{ animationDelay: '0.1s' }}>
+
             From onboarding to reporting, Tech Logic delivers reliable,
             CPCB-compliant e-waste solutions that support sustainability and scale.
           </p>
@@ -32,8 +32,8 @@ const Hero = () => {
         {/* Service Cards */}
         <div
           className="grid md:grid-cols-2 gap-6 mt-auto max-w-4xl animate-fade-up"
-          style={{ animationDelay: '0.2s' }}
-        >
+          style={{ animationDelay: '0.2s' }}>
+
           <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary/80 to-primary p-6 text-primary-foreground">
             <div className="flex items-start justify-between">
               <div>
@@ -68,8 +68,8 @@ const Hero = () => {
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  strokeWidth="1.5"
-                >
+                  strokeWidth="1.5">
+
                   <rect x="2" y="3" width="20" height="14" rx="2" />
                   <path d="M8 21h8" />
                   <path d="M12 17v4" />
@@ -82,13 +82,13 @@ const Hero = () => {
 
       {/* Decorative Pattern - Right Side */}
       <div className="absolute top-0 right-0 w-1/2 h-full hidden lg:block">
-        <div className="absolute inset-0 bg-gradient-to-l from-transparent via-background/50 to-background z-10" />
+        <div className="absolute inset-0 bg-gradient-to-l from-transparent via-background/50 to-background z-0" />
         <div
           className="absolute inset-0 opacity-30"
           style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2322c55e' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-          }}
-        />
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2322c55e' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+          }} />
+
       </div>
 
       {/* Bottom CTA Button */}
@@ -97,14 +97,14 @@ const Hero = () => {
           variant="default"
           size="lg"
           onClick={() => scrollToSection('#contact')}
-          className="rounded-full px-6"
-        >
+          className="rounded-full px-6">
+
           Contact us
           <ArrowRight className="w-4 h-4" />
         </Button>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default Hero;
