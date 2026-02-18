@@ -40,3 +40,23 @@
 .read-the-docs {
   color: #888;
 }
+/* Liquid Button Effect */
+.liquid-button {
+  @apply relative overflow-hidden transition-all duration-500;
+}
+.liquid-button::after {
+  content: '';
+  @apply absolute top-1/2 left-1/2 w-0 h-0 bg-white/20 rounded-full -translate-x-1/2 -translate-y-1/2 transition-all duration-700;
+}
+.liquid-button:hover::after {
+  @apply w-[300%] h-[300%];
+}
+
+/* Cybersecurity Scan Line */
+@keyframes scan {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(1000%); }
+}
+.animate-scan {
+  animation: scan 3s linear infinite;
+}

@@ -1,124 +1,135 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Recycle } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import { Link, useLocation } from 'react-router-dom';
+import { Menu, X, ArrowRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
+  // Scroll effect for high-end white glassmorphism
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setScrolled(window.scrollY > 20);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile menu on route change
   useEffect(() => {
-    setIsMobileMenuOpen(false);
-    window.scrollTo({ top: 0 });
+    setIsOpen(false);
   }, [location.pathname]);
 
   const navLinks = [
-    { to: '/', label: 'Home' },
-    { to: '/about', label: 'About Us' },
-    { to: '/services', label: 'Services' },
-    { to: '/compliance', label: 'Compliance & Licenses' },
-    { to: '/contact', label: 'Contact' },
+    { name: 'Home', path: '/' },
+    { name: 'About', path: '/about' },
+    { name: 'Services', path: '/services' },
+    { name: 'Compliance', path: '/compliance' },
+    { name: 'Contact', path: '/contact' },
   ];
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-background/95 backdrop-blur-md shadow-eco-md border-b border-border'
-          : 'bg-transparent'
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        scrolled 
+          ? 'bg-white/80 backdrop-blur-md border-b border-zinc-200 py-3 shadow-sm' 
+          : 'bg-transparent py-5 border-transparent'
       }`}
     >
-      <div className="eco-container px-4">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 group">
-            <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-              <Recycle className="w-5 h-5 text-primary-foreground" />
-            </div>
-            <span className="font-sans font-bold text-foreground text-lg tracking-tight">
-              TECHLOGIC
+      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+        
+        {/* Logo Section - Grounded in Official Branding */}
+        <Link to="/" className="flex items-center gap-3 group">
+          <div className="relative">
+            {/* Subtle blue glow behind logo on hover */}
+            <div className="absolute inset-0 bg-[#0081ff]/10 blur-lg rounded-full scale-150 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <img 
+              src="/logo.png" 
+              alt="Tech Logic Logo" 
+              className="h-10 w-auto relative z-10"
+            />
+          </div>
+          <div className="flex flex-col border-l border-zinc-200 pl-3">
+            <span className="font-sans font-extrabold text-sm text-zinc-900 leading-tight tracking-tight">
+              TECH LOGIC
             </span>
-          </Link>
+            <span className="text-[9px] font-mono text-[#0081ff] font-bold tracking-[0.2em]">
+              UNIT - II
+            </span>
+          </div>
+        </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-8">
-            {navLinks.map((link) => (
+        {/* Desktop Navigation - Emerald Green Hover States */}
+        <div className="hidden md:flex items-center gap-8">
+          {navLinks.map((link) => {
+            const isActive = location.pathname === link.path;
+            return (
               <Link
-                key={link.to}
-                to={link.to}
-                className={`text-sm font-medium transition-colors ${
-                  location.pathname === link.to
-                    ? 'text-primary'
-                    : 'text-muted-foreground hover:text-foreground'
+                key={link.name}
+                to={link.path}
+                className={`text-sm font-semibold transition-colors uppercase tracking-wider ${
+                  isActive ? 'text-emerald-600' : 'text-zinc-500 hover:text-emerald-600'
                 }`}
               >
-                {link.label}
+                {link.name}
               </Link>
-            ))}
-          </div>
-
-          {/* CTA Button */}
-          <div className="hidden lg:block">
-            <Button
-              variant="default"
-              size="sm"
-              asChild
-              className="rounded-full px-6"
-            >
-              <Link to="/contact">Contact us</Link>
-            </Button>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="lg:hidden p-2 rounded-lg hover:bg-secondary transition-colors"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? (
-              <X className="w-6 h-6 text-foreground" />
-            ) : (
-              <Menu className="w-6 h-6 text-foreground" />
-            )}
-          </button>
+            );
+          })}
         </div>
 
-        {/* Mobile Navigation */}
-        <div
-          className={`lg:hidden overflow-hidden transition-all duration-300 ${
-            isMobileMenuOpen ? 'max-h-96 pb-6' : 'max-h-0'
-          }`}
+        {/* Desktop CTA Button - Highlighted in Tech Blue */}
+        <div className="hidden md:block">
+          <Button 
+            asChild
+            className="rounded-full bg-[#0081ff] hover:bg-emerald-600 text-white px-6 py-5 shadow-lg shadow-blue-500/20 hover:shadow-emerald-500/20 transition-all duration-300 border-none"
+          >
+            <Link to="/contact">
+              Request Pickup
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </Link>
+          </Button>
+        </div>
+
+        {/* Mobile Menu Toggle */}
+        <button
+          className="md:hidden p-2 text-zinc-600 hover:text-emerald-600 transition-colors"
+          onClick={() => setIsOpen(!isOpen)}
         >
-          <div className="flex flex-col gap-2 pt-4 border-t border-border">
-            {navLinks.map((link) => (
+          {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        </button>
+      </div>
+
+      {/* Mobile Navigation Dropdown */}
+      <div
+        className={`md:hidden absolute top-full left-0 w-full bg-white border-b border-zinc-100 shadow-xl transition-all duration-300 overflow-hidden ${
+          isOpen ? 'max-h-[450px] opacity-100 py-8' : 'max-h-0 opacity-0 py-0'
+        }`}
+      >
+        <div className="px-6 flex flex-col gap-5">
+          {navLinks.map((link) => {
+            const isActive = location.pathname === link.path;
+            return (
               <Link
-                key={link.to}
-                to={link.to}
-                className={`text-left py-3 px-4 text-sm font-medium rounded-lg transition-all ${
-                  location.pathname === link.to
-                    ? 'text-primary bg-primary/10'
-                    : 'text-muted-foreground hover:text-foreground hover:bg-secondary'
+                key={link.name}
+                to={link.path}
+                className={`text-lg font-bold transition-colors ${
+                  isActive ? 'text-emerald-600' : 'text-zinc-800 hover:text-emerald-600'
                 }`}
               >
-                {link.label}
+                {link.name}
               </Link>
-            ))}
-            <Button
-              variant="default"
-              className="mt-2 rounded-full"
+            );
+          })}
+          <div className="pt-6 border-t border-zinc-100 mt-2">
+            <Button 
               asChild
+              className="liquid-button rounded-full bg-[#0081ff] text-white h-14 text-base font-bold shadow-lg shadow-blue-500/20"
             >
-              <Link to="/contact">Contact us</Link>
+              <Link to="/contact">
+                Request Pickup
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Link>
             </Button>
           </div>
         </div>

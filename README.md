@@ -1,73 +1,63 @@
-# Welcome to your Lovable project
+♻️ Tech Logic E-Waste Recyclers (Unit-II)
+A premium, high-performance web platform built for Tech Logic, a CPCB-authorized leader in responsible electronic waste management and secure IT Asset Disposition (ITAD). Founded in 2004, the company operates an 4,000 sq. ft. specialized facility in Bangalore with a strict 100% non-incineration and manual dismantling policy.
 
-## Project info
+🌐 Project Overview
+This project serves as the official digital presence for Tech Logic (Unit-II). The design utilizes a "Clean Tech" aesthetic—balancing a professional white foundation with Emerald Green ecological accents and Tech Logic Blue highlights.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+🛠 Tech Stack
+Framework: React.js
 
-## How can I edit this code?
+Styling: Tailwind CSS (Glassmorphism & Light Theme)
 
-There are several ways of editing your application.
+Icons: Lucide React
 
-**Use Lovable**
+Routing: React Router DOM
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+Animations: CSS Transitions & Framer Motion (implied)
 
-Changes made via Lovable will be committed automatically to this repo.
+✨ Key Features
+Interactive Process Workflow: A custom-built, interactive diagram that walks clients through the lifecycle of e-waste, from collection to repurposing.
 
-**Use your preferred IDE**
+B2B Compliance Center: A dedicated page for auditors and partners to view certifications (ISO, CPCB) and audit-ready documentation.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Responsive Infrastructure: Fully optimized for mobile and desktop, ensuring corporate clients can request pickups from any device.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Secure Data Focus: Highlights the company's commitment to military-grade data destruction and secure chain-of-custody tracking.
 
-Follow these steps:
+Eco-Industrial Aesthetic: A custom color palette using Tech Logic Blue (#0081ff) to maintain brand identity across all UI components.
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+🏗 Installation & Setup
+Clone the repository:
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+Bash
+git clone https://github.com/your-username/tech-logic-web.git
+Install dependencies:
 
-# Step 3: Install the necessary dependencies.
-npm i
+Bash
+npm install
+Place the logo:
+Ensure logo.png is located in the /public directory to render the branding correctly.
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+Run in development mode:
+
+Bash
 npm run dev
-```
+📍 Facility & Contact Information
+Headquarters: #36, P.I.D No. 36-139-63, 2nd Main, Ranganathapura, Bangalore 560079.
 
-**Edit a file directly in GitHub**
+Facility Size: 4,000 sq. ft. specialized recycling unit.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Contact Person: Jagadish.
 
-**Use GitHub Codespaces**
+Email: Jagadish@e-wasterecyclers.com.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Phone: +91 9880400016.
 
-## What technologies are used for this project?
+📜 License & Compliance
+This platform and the associated Tech Logic (Unit-II) operations are fully compliant with:
 
-This project is built with:
+CPCB (Central Pollution Control Board) E-Waste Management Rules.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+ISO 14001:2015 (Environmental Management).
 
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+ISO 9001:2015 (Quality Management).
