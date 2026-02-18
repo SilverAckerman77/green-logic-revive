@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Recycle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,20 +16,19 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = [
-    { href: '#services', label: 'Products' },
-    { href: '#about', label: 'About us' },
-    { href: '#faq', label: 'FAQ' },
-    { href: '#process', label: 'Our Process' },
-  ];
-
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+  // Close mobile menu on route change
+  useEffect(() => {
     setIsMobileMenuOpen(false);
-  };
+    window.scrollTo({ top: 0 });
+  }, [location.pathname]);
+
+  const navLinks = [
+    { to: '/', label: 'Home' },
+    { to: '/about', label: 'About Us' },
+    { to: '/services', label: 'Services' },
+    { to: '/compliance', label: 'Compliance & Licenses' },
+    { to: '/contact', label: 'Contact' },
+  ];
 
   return (
     <nav
@@ -37,35 +38,32 @@ const Navbar = () => {
           : 'bg-transparent'
       }`}
     >
-      <div className="eco-container">
+      <div className="eco-container px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a
-            href="#"
-            className="flex items-center gap-3 group"
-            onClick={(e) => {
-              e.preventDefault();
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }}
-          >
+          <Link to="/" className="flex items-center gap-3 group">
             <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
               <Recycle className="w-5 h-5 text-primary-foreground" />
             </div>
             <span className="font-sans font-bold text-foreground text-lg tracking-tight">
               TECHLOGIC
             </span>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
-              <button
-                key={link.href}
-                onClick={() => scrollToSection(link.href)}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              <Link
+                key={link.to}
+                to={link.to}
+                className={`text-sm font-medium transition-colors ${
+                  location.pathname === link.to
+                    ? 'text-primary'
+                    : 'text-muted-foreground hover:text-foreground'
+                }`}
               >
                 {link.label}
-              </button>
+              </Link>
             ))}
           </div>
 
@@ -74,10 +72,10 @@ const Navbar = () => {
             <Button
               variant="default"
               size="sm"
-              onClick={() => scrollToSection('#contact')}
+              asChild
               className="rounded-full px-6"
             >
-              Contact us
+              <Link to="/contact">Contact us</Link>
             </Button>
           </div>
 
@@ -103,20 +101,24 @@ const Navbar = () => {
         >
           <div className="flex flex-col gap-2 pt-4 border-t border-border">
             {navLinks.map((link) => (
-              <button
-                key={link.href}
-                onClick={() => scrollToSection(link.href)}
-                className="text-left py-3 px-4 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-secondary rounded-lg transition-all"
+              <Link
+                key={link.to}
+                to={link.to}
+                className={`text-left py-3 px-4 text-sm font-medium rounded-lg transition-all ${
+                  location.pathname === link.to
+                    ? 'text-primary bg-primary/10'
+                    : 'text-muted-foreground hover:text-foreground hover:bg-secondary'
+                }`}
               >
                 {link.label}
-              </button>
+              </Link>
             ))}
             <Button
               variant="default"
               className="mt-2 rounded-full"
-              onClick={() => scrollToSection('#contact')}
+              asChild
             >
-              Contact us
+              <Link to="/contact">Contact us</Link>
             </Button>
           </div>
         </div>
