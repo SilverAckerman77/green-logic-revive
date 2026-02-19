@@ -39,11 +39,12 @@ const Hero = () => {
               <Button 
                 size="lg" 
                 className="liquid-button rounded-full bg-[#0081ff] hover:bg-emerald-600 text-white h-14 px-8 text-base font-bold shadow-xl shadow-blue-500/20 transition-all duration-300 border-none"
-                onClick={() => navigate('/contact')}
+                onClick={() => navigate('/pickup')}
               >
                 Schedule a Pickup
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
+              {/* ... secondary button */}
               <Button 
                 variant="outline" 
                 size="lg" 

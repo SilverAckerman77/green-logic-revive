@@ -26,6 +26,7 @@ const Navbar = () => {
     { name: 'About', path: '/about' },
     { name: 'Services', path: '/services' },
     { name: 'Compliance', path: '/compliance' },
+    { name: 'Schedule Pickup', path: '/pickup' },
     { name: 'Contact', path: '/contact' },
   ];
 
@@ -84,7 +85,7 @@ const Navbar = () => {
             asChild
             className="rounded-full bg-[#0081ff] hover:bg-emerald-600 text-white px-6 py-5 shadow-lg shadow-blue-500/20 hover:shadow-emerald-500/20 transition-all duration-300 border-none"
           >
-            <Link to="/contact">
+            <Link to="/pickup">
               Request Pickup
               <ArrowRight className="w-4 h-4 ml-2" />
             </Link>
@@ -126,7 +127,7 @@ const Navbar = () => {
               asChild
               className="liquid-button rounded-full bg-[#0081ff] text-white h-14 text-base font-bold shadow-lg shadow-blue-500/20"
             >
-              <Link to="/contact">
+              <Link to="/pickup">
                 Request Pickup
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Link>
