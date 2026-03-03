@@ -42,7 +42,7 @@ const NotFound = () => {
           System Error: Component Not Found
         </span>
         
-        <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-zinc-900 mb-6 uppercase">
+        <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-zinc-900 mb-6 uppercase">
           Lost in the <br />
           <span className="font-serif italic text-emerald-600 lowercase">circuit?</span>
         </h1>

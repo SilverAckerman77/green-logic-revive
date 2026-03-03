@@ -101,7 +101,7 @@ const EcoSync = () => {
         {step === 1 && (
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }}>
             <div className="mb-10 text-center">
-              <h2 className="text-4xl font-black text-zinc-900 tracking-tighter uppercase mb-2">Inventory Estimator</h2>
+              <h2 className="text-3xl font-black text-zinc-900 tracking-tighter uppercase mb-2">Inventory Estimator</h2>
               <p className="text-zinc-500 font-medium italic">Select items for manual dismantling at our 4,000 sq. ft. facility.</p>
             </div>
 
@@ -199,7 +199,7 @@ const EcoSync = () => {
             <div className="w-24 h-24 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-8 shadow-lg shadow-emerald-500/10">
               <CheckCircle2 size={48} />
             </div>
-            <h2 className="text-4xl font-black mb-4 uppercase tracking-tighter text-zinc-900">Request Prepared</h2>
+            <h2 className="text-3xl font-black mb-4 uppercase tracking-tighter text-zinc-900">Request Prepared</h2>
             <p className="text-zinc-500 mb-10 max-w-md mx-auto font-medium">Your estimate for {totalWeight.toFixed(1)}kg is ready. Download your formal quote for internal auditing below.</p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

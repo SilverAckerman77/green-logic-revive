@@ -41,7 +41,7 @@ const Contact = () => {
               Connect With Us
             </span>
 
-            <h2 className="text-4xl md:text-5xl lg:text-6xl text-zinc-900 font-extrabold tracking-tight mb-12">
+            <h2 className="text-3xl md:text-5xl lg:text-6xl text-zinc-900 font-extrabold tracking-tight mb-12">
               <span className="font-sans">READY TO</span>
               <br />
               <span className="font-serif italic text-emerald-600">GET STARTED?</span>

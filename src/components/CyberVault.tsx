@@ -15,7 +15,7 @@ const CyberVault = () => {
             </div>
             <span className="text-xs font-mono font-bold tracking-widest text-[#0081ff]">SECURITY PROTOCOL</span>
           </div>
-          <h2 className="text-4xl md:text-6xl font-black leading-tight mb-8">
+          <h2 className="text-3xl md:text-6xl font-black leading-tight mb-8">
             DATA DESTRUCTION <br /> <span className="text-zinc-500 italic font-serif">THE VAULT</span>
           </h2>
           <div className="space-y-6">

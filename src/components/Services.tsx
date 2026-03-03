@@ -56,7 +56,7 @@ const Services = () => {
             <span className="inline-block px-3 py-1 mb-6 text-xs font-bold tracking-widest uppercase border border-emerald-200 rounded-full text-emerald-700 bg-emerald-50">
               Our Expertise
             </span>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-zinc-900 mb-6">
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-zinc-900 mb-6">
               <span className="font-sans">BUILT FOR</span>
               <br />
               <span className="font-serif italic text-emerald-600">ENVIRONMENTAL IMPACT</span>
@@ -86,7 +86,7 @@ const Services = () => {
               className="group relative p-8 rounded-3xl bg-white border border-zinc-100 hover:border-[#0081ff]/30 hover:shadow-2xl hover:shadow-blue-500/5 transition-all duration-500 overflow-hidden"
             >
               {/* Service Number Accent */}
-              <span className="absolute top-8 right-8 text-4xl font-black text-zinc-50 group-hover:text-[#0081ff]/5 transition-colors">
+              <span className="absolute top-8 right-8 text-3xl font-black text-zinc-50 group-hover:text-[#0081ff]/5 transition-colors">
                 {service.number}
               </span>
 

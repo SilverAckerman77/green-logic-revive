@@ -67,42 +67,41 @@ const Process = () => {
           <p className="text-zinc-500 text-[10px] font-mono tracking-[0.3em] uppercase animate-pulse">Click a stage for technical details</p>
         </div>
 
-        {/* The Interactive Diagram */}
-        <div className="relative flex items-center justify-center py-16">
+        {/* The Interactive Diagram - Mobile Vertical / Desktop Horizontal */}
+        <div className="relative flex flex-col md:flex-row items-center justify-center py-10 md:py-16 gap-12 md:gap-0">
           
-          {/* Left Steps */}
-          <div className="flex flex-col gap-10 items-end">
+          {/* Left Steps - Top on Mobile */}
+          <div className="flex flex-col md:flex-col gap-6 md:gap-10 items-center md:items-end w-full md:w-auto">
             {leftSteps.map((step, index) => (
-              <div key={step.label} className="flex items-center gap-4 group cursor-pointer" onClick={() => setActiveStep(step.label)}>
-                <div className={`px-6 py-2.5 rounded-full border text-xs font-mono font-bold tracking-widest transition-all duration-300 ${activeStep === step.label ? 'bg-[#0081ff] text-white border-[#0081ff] shadow-xl shadow-blue-500/30' : 'bg-white border-zinc-200 text-zinc-500 group-hover:border-emerald-500 group-hover:text-emerald-600'}`}>
+              <div key={step.label} className="flex flex-col md:flex-row items-center gap-4 group cursor-pointer" onClick={() => setActiveStep(step.label)}>
+                <div className={`px-6 py-2.5 rounded-full border text-[10px] md:text-xs font-mono font-bold tracking-widest transition-all duration-300 ${activeStep === step.label ? 'bg-[#0081ff] text-white border-[#0081ff] shadow-xl shadow-blue-500/30' : 'bg-white border-zinc-200 text-zinc-500 group-hover:border-emerald-500 group-hover:text-emerald-600'}`}>
                   {step.label}
                 </div>
-                <div className={`w-20 md:w-40 h-[1.5px] bg-gradient-to-r from-transparent via-zinc-200 to-emerald-500 transition-all duration-500 ${activeStep === step.label ? 'opacity-100 scale-x-110' : 'opacity-40'}`} style={{ transform: `rotate(${index === 0 ? -18 : index === 2 ? 18 : 0}deg)`, transformOrigin: 'right center' }} />
+                {/* Hide connecting lines on mobile to save space */}
+                <div className={`hidden md:block w-20 md:w-40 h-[1.5px] bg-gradient-to-r from-transparent via-zinc-200 to-emerald-500 transition-all duration-500 ${activeStep === step.label ? 'opacity-100 scale-x-110' : 'opacity-40'}`} style={{ transform: `rotate(${index === 0 ? -18 : index === 2 ? 18 : 0}deg)`, transformOrigin: 'right center' }} />
               </div>
             ))}
           </div>
 
-          {/* Center Hub Node */}
-          <div className="mx-6 md:mx-12 relative">
+          {/* Center Hub Node - Scaled Up for Mobile Impact */}
+          <div className="mx-6 md:mx-12 relative scale-125 md:scale-100">
             <div className="absolute inset-0 rounded-full bg-emerald-500/10 blur-3xl scale-150 animate-pulse" />
             <div className="relative w-32 h-32 md:w-44 md:h-44 rounded-full border border-zinc-100 bg-white shadow-inner flex items-center justify-center">
-              {/* Rotating Outer Orbital */}
               <div className="absolute inset-0 animate-spin-slow">
-                 <div className="w-3 h-3 rounded-full bg-[#0081ff] absolute top-0 left-1/2 -translate-x-1/2 shadow-lg" />
+                <div className="w-3 h-3 rounded-full bg-[#0081ff] absolute top-0 left-1/2 -translate-x-1/2 shadow-lg" />
               </div>
-
               <div className="w-24 h-24 md:w-32 md:h-32 rounded-full bg-white border-2 border-[#0081ff] flex items-center justify-center shadow-xl">
                 <Recycle className="w-12 h-12 md:w-16 md:h-16 text-[#0081ff] animate-spin-slow" strokeWidth={1.5} />
               </div>
             </div>
           </div>
 
-          {/* Right Steps */}
-          <div className="flex flex-col gap-10 items-start">
+          {/* Right Steps - Bottom on Mobile */}
+          <div className="flex flex-col md:flex-col gap-6 md:gap-10 items-center md:items-start w-full md:w-auto">
             {rightSteps.map((step, index) => (
-              <div key={step.label} className="flex items-center gap-4 group cursor-pointer" onClick={() => setActiveStep(step.label)}>
-                <div className={`w-20 md:w-40 h-[1.5px] bg-gradient-to-l from-transparent via-zinc-200 to-emerald-500 transition-all duration-500 ${activeStep === step.label ? 'opacity-100 scale-x-110' : 'opacity-40'}`} style={{ transform: `rotate(${index === 0 ? 18 : index === 2 ? -18 : 0}deg)`, transformOrigin: 'left center' }} />
-                <div className={`px-6 py-2.5 rounded-full border text-xs font-mono font-bold tracking-widest transition-all duration-300 ${activeStep === step.label ? 'bg-[#0081ff] text-white border-[#0081ff] shadow-xl shadow-blue-500/30' : 'bg-white border-zinc-200 text-zinc-500 group-hover:border-emerald-500 group-hover:text-emerald-600'}`}>
+              <div key={step.label} className="flex flex-col-reverse md:flex-row items-center gap-4 group cursor-pointer" onClick={() => setActiveStep(step.label)}>
+                <div className={`hidden md:block w-20 md:w-40 h-[1.5px] bg-gradient-to-l from-transparent via-zinc-200 to-emerald-500 transition-all duration-500 ${activeStep === step.label ? 'opacity-100 scale-x-110' : 'opacity-40'}`} style={{ transform: `rotate(${index === 0 ? 18 : index === 2 ? -18 : 0}deg)`, transformOrigin: 'left center' }} />
+                <div className={`px-6 py-2.5 rounded-full border text-[10px] md:text-xs font-mono font-bold tracking-widest transition-all duration-300 ${activeStep === step.label ? 'bg-[#0081ff] text-white border-[#0081ff] shadow-xl shadow-blue-500/30' : 'bg-white border-zinc-200 text-zinc-500 group-hover:border-emerald-500 group-hover:text-emerald-600'}`}>
                   {step.label}
                 </div>
               </div>

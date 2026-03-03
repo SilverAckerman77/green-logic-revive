@@ -126,7 +126,7 @@ const ServicesPage = () => {
                 <span className="text-emerald-700 font-bold text-xs uppercase tracking-[0.2em]">Our Commitment</span>
               </div>
               
-              <h2 className="text-4xl md:text-5xl text-zinc-900 font-extrabold mb-8 leading-tight">
+              <h2 className="text-3xl md:text-5xl text-zinc-900 font-extrabold mb-8 leading-tight">
                 <span className="font-sans uppercase">100% Non-Incineration</span>
                 <br />
                 <span className="font-serif italic text-emerald-600">Processing Strategy</span>

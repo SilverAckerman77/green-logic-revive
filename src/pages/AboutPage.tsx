@@ -44,7 +44,7 @@ const AboutPage = () => {
             <br />
             <span className="font-serif italic text-emerald-600">SUSTAINABILITY</span>
             <br />
-            <span className="font-sans text-zinc-900 text-4xl md:text-5xl lg:text-6xl">SINCE 2004</span>
+            <span className="font-sans text-zinc-900 text-3xl md:text-5xl lg:text-6xl">SINCE 2004</span>
           </h1>
           <p className="text-xl text-zinc-600 max-w-3xl mx-auto leading-relaxed">
             Tech Logic E-Waste Recyclers (Unit-II) has been at the forefront of responsible electronic waste management for over two decades, providing highly secure, government-authorized recycling services across South India.
@@ -60,10 +60,10 @@ const AboutPage = () => {
             {/* Left - Infrastructure Info */}
             <div>
               <span className="text-[#0081ff] font-mono text-xs font-bold tracking-[0.2em] mb-4 block uppercase">01 — Our Infrastructure</span>
-              <h2 className="text-4xl md:text-5xl text-zinc-900 font-extrabold mb-8 leading-tight">
+              <h2 className="text-3xl md:text-5xl text-zinc-900 font-extrabold mb-8 leading-tight">
                 <span className="font-sans uppercase">State-of-the-Art</span>
                 <br />
-                <span className="font-serif italic text-emerald-600 text-3xl md:text-4xl">Processing Centers</span>
+                <span className="font-serif italic text-emerald-600 text-3xl md:text-3xl">Processing Centers</span>
               </h2>
               <p className="text-zinc-600 mb-10 leading-relaxed text-lg">
                 Proper e-waste management requires specialized facilities. Our primary unit spans over 4,000 sq. ft. in Bangalore, equipped with advanced manual dismantling and material recovery infrastructure. We also operate in Chennai to ensure rapid compliance support across the region.

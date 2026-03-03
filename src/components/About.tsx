@@ -39,7 +39,7 @@ const About = () => {
           <span className="inline-block px-3 py-1 mb-6 text-xs font-bold tracking-widest uppercase border border-emerald-200 rounded-full text-emerald-700 bg-emerald-50">
             About Us
           </span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-zinc-900 mb-8 leading-tight">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-zinc-900 mb-8 leading-tight">
             <span className="font-sans">Committed to a</span>
             <br />
             <span className="font-serif italic text-emerald-600">Sustainable Future</span>
@@ -87,7 +87,7 @@ const About = () => {
               key={stat.label}
               className="text-center p-8 rounded-3xl bg-white border border-zinc-100 shadow-sm group hover:border-[#0081ff]/30 transition-colors"
             >
-              <div className="font-sans font-black text-3xl md:text-4xl text-[#0081ff] mb-2 group-hover:scale-110 transition-transform duration-300">
+              <div className="font-sans font-black text-3xl md:text-3xl text-[#0081ff] mb-2 group-hover:scale-110 transition-transform duration-300">
                 {stat.value}
               </div>
               <div className="text-[10px] font-mono font-bold uppercase tracking-widest text-zinc-400">

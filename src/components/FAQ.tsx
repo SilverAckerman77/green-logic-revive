@@ -40,7 +40,7 @@ const FAQ = () => {
             <span className="inline-block px-3 py-1 mb-6 text-xs font-bold tracking-widest uppercase border border-emerald-200 rounded-full text-emerald-700 bg-emerald-50">
               Support
             </span>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-zinc-900 mb-6">
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-zinc-900 mb-6">
               <span className="font-sans uppercase">Frequently Asked</span>
               <br />
               <span className="font-serif italic text-emerald-600">Questions</span>

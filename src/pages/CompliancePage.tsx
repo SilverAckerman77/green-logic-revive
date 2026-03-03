@@ -98,7 +98,7 @@ const CompliancePage = () => {
             
             {/* Left side: Text */}
             <div className="lg:col-span-5">
-              <h2 className="text-3xl md:text-4xl text-zinc-900 font-extrabold mb-6 font-sans uppercase tracking-tight leading-tight">
+              <h2 className="text-3xl md:text-3xl text-zinc-900 font-extrabold mb-6 font-sans uppercase tracking-tight leading-tight">
                 Audit-Ready <br /> <span className="text-emerald-600 italic font-serif lowercase">Documentation</span>
               </h2>
               <p className="text-zinc-600 leading-relaxed mb-8">
@@ -141,7 +141,7 @@ const CompliancePage = () => {
 
       {/* Trust Band / CTA */}
       <section className="py-24 text-center px-6 bg-zinc-50/50">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-zinc-900 mb-8 font-sans uppercase tracking-tight">Need an environmental audit?</h2>
+        <h2 className="text-3xl md:text-3xl font-extrabold text-zinc-900 mb-8 font-sans uppercase tracking-tight">Need an environmental audit?</h2>
         <Button 
           size="lg" 
           className="rounded-full bg-[#0081ff] hover:bg-emerald-600 text-white h-16 px-10 text-base font-bold shadow-xl shadow-blue-500/20 hover:shadow-emerald-500/20 transition-all duration-300 border-none"

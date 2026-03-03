@@ -25,7 +25,7 @@ const ExplodedHardware = () => {
         
         <div className="text-center mb-16 relative z-50">
           <span className="text-[#0081ff] font-mono text-xs font-bold tracking-[0.3em] uppercase">Manual Dismantling</span>
-          <h2 className="text-4xl md:text-5xl font-black text-zinc-900 mt-2 font-sans tracking-tight">TRANSPARENT RECOVERY</h2>
+          <h2 className="text-3xl md:text-5xl font-black text-zinc-900 mt-2 font-sans tracking-tight">TRANSPARENT RECOVERY</h2>
         </div>
 
         <div className="relative w-full max-w-lg h-96 flex items-center justify-center">
