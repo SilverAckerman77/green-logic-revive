@@ -1,5 +1,7 @@
 import { Target, Eye, Leaf, Users, Building2, MapPin, Calendar, Award } from 'lucide-react';
-
+import interiorImg from '../assets/interior.jpeg';
+import recyclingImg from '../assets/recycling.jpg';
+import hardwareImg from '../assets/hardware.jpg';   
 const AboutPage = () => {
   const values = [
     {
@@ -90,7 +92,7 @@ const AboutPage = () => {
             <div className="grid grid-cols-2 gap-4 h-[600px]">
               <div className="space-y-4">
                 <div className="h-[350px] rounded-3xl overflow-hidden border border-zinc-200 bg-white group">
-                  <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop" alt="Facility Interior" className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-700" />
+                  <img src={interiorImg} alt="Facility Interior" className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-700" />
                 </div>
                 <div className="h-[234px] rounded-3xl overflow-hidden border border-zinc-200 bg-white group">
                   <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop" alt="Hardware" className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-700" />
@@ -98,10 +100,10 @@ const AboutPage = () => {
               </div>
               <div className="space-y-4 pt-12">
                 <div className="h-[234px] rounded-3xl overflow-hidden border border-zinc-200 bg-white group">
-                  <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" alt="Testing" className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-700" />
+                  <img src={hardwareImg} alt="Testing" className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-700" />
                 </div>
                 <div className="h-[350px] rounded-3xl overflow-hidden border border-zinc-200 bg-white group">
-                  <img src="https://images.unsplash.com/photo-1530836369250-ef71a3f5e4bf?q=80&w=2000&auto=format&fit=crop" alt="Eco Recycling" className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-700" />
+                  <img src={recyclingImg} alt="Eco Recycling" className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-700" />
                 </div>
               </div>
             </div>
